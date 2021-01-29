@@ -1,7 +1,7 @@
 // Powered by Infostretch
 
 pipeline {
-    agent anyl
+    agent any
     triggers {
         pollSCM('* * * * *')
     }
@@ -16,7 +16,7 @@ pipeline {
     post {
         always {
             junit '**/target/surefire-reports/TEST-*.xml'
-            archiveArtifacts: 'target/*.jar'
+            archiveArtifacts 'target/*.jar'
         }
     }
 }
